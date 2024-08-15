@@ -1,0 +1,31 @@
+div.scoreboard {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 20px;
+  background-color: #282c34; /* Dark background */
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  color: #ffffff; /* White text color */
+  font-family: "Arial", sans-serif;
+  font-size: 18px;
+}
+
+.currentScore,
+.bestScore {
+  padding: 5px 10px;
+  background-color: #4caf50; /* Green background */
+  border-radius: 5px;
+  color: #fff;
+}
+
+.currentScore {
+  background-color: #2196f3; /* Red for current score */
+}
+
+.bestScore {
+  background-color: #f44336; /* Blue for best score */
+}

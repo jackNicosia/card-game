@@ -1,0 +1,23 @@
+header.header {
+  background-color: #042a2b; /* Dark teal background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  text-align: center;
+  color: #ffffff; /* White text color */
+  font-family: "Arial", sans-serif;
+}
+
+header.header h1 {
+  font-size: 36px;
+  margin: 0;
+  color: #e4f9f5; /* Light teal for the heading */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Subtle text shadow for depth */
+}
+
+header.header p {
+  font-size: 20px;
+  margin: 10px 0 0;
+  color: #5eb1bf; /* Bright teal for the paragraph */
+  font-weight: 300;
+}

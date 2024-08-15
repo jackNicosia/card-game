@@ -1,0 +1,93 @@
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(3, 1fr); /* Simplified grid rows */
+  justify-content: center;
+  justify-items: center;
+  gap: 15px; /* Added gap between cards */
+  padding: 20px; /* Added padding around the container */
+  background-color: #f0f4f8; /* Light background color */
+  border-radius: 15px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+}
+
+.cards {
+  width: 10vw;
+  max-width: 150px; /* Restrict the maximum size for consistency */
+  aspect-ratio: 1; /* Ensure cards are square */
+  background-color: #0be4f3; /* Light teal background for cards */
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column; /* Stack image and text vertically */
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  transition: transform 0.2s ease-in-out; /* Smooth hover effect */
+  overflow: hidden; /* Ensures content doesn't overflow the card */
+}
+
+.cards img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio of the image */
+  border-radius: 10px 10px 0 0; /* Rounded corners only at the top */
+}
+
+.cards p {
+  margin-top: 10px; /* Space between image and text */
+  color: #042a2b;
+  font-size: 18px;
+  text-align: center;
+}
+
+.cards:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+p {
+  text-align: center;
+  font-size: 18px;
+  color: #042a2b;
+}
+
+.button-54 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #042a2b;
+  cursor: pointer;
+  border: 3px solid #042a2b;
+  background-color: #e4f9f5;
+  padding: 0.25em 0.5em;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 0px 0px #5eb1bf, 2px 2px 0px 0px #5eb1bf,
+    3px 3px 0px 0px #5eb1bf, 4px 4px 0px 0px #5eb1bf, 5px 5px 0px 0px #5eb1bf;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.button-54:active {
+  box-shadow: 0px 0px 0px 0px;
+  top: 5px;
+  left: 5px;
+}
+
+.button-54:hover {
+  transform: translate(-2px, -2px); /* Subtle hover effect */
+}
+
+@media (min-width: 768px) {
+  .button-54 {
+    padding: 0.25em 0.75em;
+  }
+}
+
+.button-div {
+  display: flex;
+  justify-content: center;
+}
