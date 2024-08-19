@@ -36,6 +36,10 @@ function GameBoard() {
   }
 
   const handleCardClick = (id) => {
+    const sound = new Audio(
+      `${process.env.PUBLIC_URL}/assets/sounds/click-sound.mp3`
+    );
+    sound.play();
     if (clickedCards.includes(id)) {
       if (score > bestScore) {
         setBestScore(score);
