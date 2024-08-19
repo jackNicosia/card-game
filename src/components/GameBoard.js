@@ -29,10 +29,10 @@ function GameBoard() {
   }, []);
 
   function handleRestart() {
-    setGameOver(false);
     setScore(0);
     setClickedCards([]);
     loadPokemonCards();
+    setGameOver(false);
   }
 
   const handleCardClick = (id) => {
