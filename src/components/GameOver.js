@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/GameOver.css";
 
 function GameOver({ show, onRestart, message }) {
   if (!show) return null;

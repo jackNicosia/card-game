@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Cards from "./Card";
 import Scoreboard from "./Scoreboard";
+import GameOver from "./GameOver";
 import { fetchPokemons } from "./pokemonApi";
 import "../styles/GameBoard.css";
 
@@ -9,6 +10,7 @@ function GameBoard() {
   const [clickedCards, setClickedCards] = useState([]);
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
+  const [gameOver, setGameOver] = useState(false);
 
   // Function to fetch Pokémon data and set cards
   const loadPokemonCards = async () => {
@@ -26,15 +28,19 @@ function GameBoard() {
     loadPokemonCards();
   }, []);
 
+  function handleRestart() {
+    setGameOver(false);
+    setScore(0);
+    setClickedCards([]);
+    loadPokemonCards();
+  }
+
   const handleCardClick = (id) => {
     if (clickedCards.includes(id)) {
-      alert("Game Over! You already clicked that card!");
       if (score > bestScore) {
         setBestScore(score);
       }
-      setScore(0);
-      setClickedCards([]);
-      loadPokemonCards(); // Fetch new Pokémon data on game over
+      setGameOver(true);
     } else {
       const newScore = score + 1;
       setClickedCards([...clickedCards, id]);
@@ -44,13 +50,9 @@ function GameBoard() {
         if (newScore > bestScore) {
           setBestScore(newScore);
         }
-        setClickedCards([]);
-        setScore(0);
-        loadPokemonCards(); // Fetch new Pokémon data on win
+        handleRestart(); // Restart the game upon winning
       } else {
         setCards((prevCards) => shuffleArray(prevCards));
-        console.log(`Card ${id} clicked!`);
-        console.log(clickedCards);
       }
     }
   };
@@ -80,6 +82,11 @@ function GameBoard() {
           />
         ))}
       </div>
+      <GameOver
+        show={gameOver}
+        onRestart={handleRestart}
+        message="Game Over! Try Again?"
+      />
     </div>
   );
 }
